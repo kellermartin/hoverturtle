@@ -19,8 +19,16 @@ RUN sudo apt update && sudo apt upgrade -y
 # Install Git
 RUN sudo apt install -y git
 
+# Install CAN
+RUN sudo apt install -y can-utils net-tools iproute2 
+
+# Install Ros 2 Control and Controllers
+RUN sudo apt install -y ros-jazzy-ros2-control ros-jazzy-ros2-controllers 
+
 # Rosdep update
 RUN rosdep update
 
 # Source the ROS setup file
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
+
+CMD ["/bin/bash"]

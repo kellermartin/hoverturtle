@@ -15,5 +15,6 @@
         "eamodio.gitlens"
       ]
     }
-  }
+  },
+  "postCreateCommand": "sudo usermod -aG video $(whoami)"
 }
